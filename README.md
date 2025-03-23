@@ -95,3 +95,129 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+// Playo logo image
+https://playo-website.gumlet.io/playo-website-v2/logos-icons/new-logo-playo.png?q=50
+
+
+//start screen data
+const users = [
+    {
+      image:
+        'https://images.pexels.com/photos/7208625/pexels-photo-7208625.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '1',
+      latitude: '13.1295',
+      longitude: '79.5977',
+      name: 'sujan',
+      description: 'Hey!',
+    },
+    {
+      image:
+        'https://images.pexels.com/photos/2913125/pexels-photo-2913125.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '2',
+      latitude: '13.155',
+      longitude: '77.6070',
+      name: 'suhas',
+      description: "let's play",
+    },
+    {
+      image:
+        'https://images.pexels.com/photos/1042140/pexels-photo-1042140.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '3',
+      latitude: '13.0977',
+      longitude: '77.5839',
+      name: 'ashish',
+      description: "I'm always",
+    },
+    {
+      image:
+        'https://images.pexels.com/photos/4307678/pexels-photo-4307678.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '4',
+      latitude: '13.0490',
+      longitude: '77.5936',
+      name: 'abhi',
+      description: 'At 8pm?',
+    },
+    {
+      image:
+        'https://images.pexels.com/photos/1379031/pexels-photo-1379031.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '5',
+      latitude: '13.0623',
+      longitude: '77.5871',
+      name: 'akash',
+      description: 'Hey!',
+    },
+    {
+      image:
+        'https://images.pexels.com/photos/3264235/pexels-photo-3264235.jpeg?auto=compress&cs=tinysrgb&w=800',
+      id: '6',
+      latitude: '13.0354',
+      longitude: '77.5988',
+      name: 'Preetham',
+      description: 'What up?',
+    },
+];
+
+//Select Image screen data
+const images = [
+    {
+      id: '0',
+      image: 'https://cdn-icons-png.flaticon.com/128/16683/16683469.png',
+    },
+    {
+      id: '0',
+      image: 'https://cdn-icons-png.flaticon.com/128/16683/16683439.png',
+    },
+    {
+      id: '0',
+      image: 'https://cdn-icons-png.flaticon.com/128/4202/4202835.png',
+    },
+    {
+      id: '0',
+      image: 'https://cdn-icons-png.flaticon.com/128/3079/3079652.png',
+    },
+];
+
+//Home Screen data:
+
+//images for play part and booking part containers
+uri: 'https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg?auto=compress&cs=tinysrgb&w=800'
+
+uri: 'https://images.pexels.com/photos/3660204/pexels-photo-3660204.jpeg?auto=compress&cs=tinysrgb&w=800'
+
+//Ameneties component:
+const services = [
+    {
+      id: "0",
+      name: "First Aid",
+    },
+    {
+      id: "2",
+      name: "free wifi",
+    },
+    {
+      id: "3",
+      name: "Wash Rooms",
+    },
+    {
+      id: "4",
+      name: "Change Rooms",
+    },
+    {
+      id: "5",
+      name: "Drinking Water",
+    },
+    {
+      id: "6",
+      name: "Juice",
+    },
+    {
+      id: "7",
+      name: "Fitness Coach",
+    },
+    {
+      id: "8",
+      name: "Member's Lounge",
+    },
+];
