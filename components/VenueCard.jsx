@@ -1,11 +1,24 @@
 import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 import AntDesign from "react-native-vector-icons/AntDesign"
+import { useNavigation } from '@react-navigation/native'
 
 const VenueCard = ({ item }) => {
+
+    const navigation = useNavigation()
     return (
         <View style={{ marginTop: 10 , backgroundColor:"white" , borderRadius:8 , shadowColor:"gray" }}>
-            <Pressable>
+            <Pressable
+            onPress={()=>navigation.navigate("Venue" , {
+                name:item.name,
+                image:item.newImage,
+                sportsAvailable:item.sportsAvailable,
+                rating:item.rating,
+                address:item.address,
+                location:item.location,
+                bookings:item.bookings
+            })}
+            >
                 <View >
                     <Image style={{ width: "100%", height: 200, borderTopLeftRadius: 10, borderTopRightRadius: 9 }} source={{ uri: item.image }} />
                 </View>

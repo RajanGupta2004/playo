@@ -13,6 +13,7 @@ import PlayScreens from '../screens/PlayScreens';
 import BookScreen from '../screens/BookScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import VenueScreenInfo from '../screens/VenueScreenInfo';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -87,6 +88,7 @@ const MainStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name='Main' component={BottomTabs} options={{ headerShown: false }} />
+      <Stack.Screen name='Venue' component={VenueScreenInfo} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }
