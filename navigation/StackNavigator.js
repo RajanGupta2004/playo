@@ -14,6 +14,12 @@ import BookScreen from '../screens/BookScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import VenueScreenInfo from '../screens/VenueScreenInfo';
+import StartScreen from '../screens/StartScreen';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import PasswordScreen from '../screens/PasswordScreen';
+import ImageScreen from '../screens/ImageScreen';
+import NameScreen from '../screens/NameScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -78,6 +84,12 @@ function BottomTabs() {
 const AuthStack = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen name='Register' component={RegisterScreen} options={{ headerShown: false }} />
+      <Stack.Screen name='Start' component={StartScreen} options={{ headerShown: false }} />
+      <Stack.Screen name='Login' component={LoginScreen} />
+      <Stack.Screen name='Password' component={PasswordScreen} options={{headerShown:false}} />
+      <Stack.Screen name='Image' component={ImageScreen} />
+      <Stack.Screen name='NameScreen' component={NameScreen} options={{ headerShown: false }} />
 
     </Stack.Navigator>
   )
@@ -96,7 +108,8 @@ const MainStack = () => {
 const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <MainStack />
+      {/* <MainStack /> */}
+      <AuthStack />
     </NavigationContainer>
   )
 }
