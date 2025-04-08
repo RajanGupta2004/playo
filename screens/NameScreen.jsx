@@ -1,22 +1,55 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const NameScreen = () => {
+
+  const [firstName, setFirstName] = useState("")
+
+  const [lastName, setLastName] = useState("")
+
+  const navigation = useNavigation();
+
+
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <>
+      <ScrollView style={{ flex: 1 }}>
 
-      <View >
-        <Ionicons name="arrow-back" size={24} color="black" style={{marginHorizontal: 10}} />
-        <View style={{ marginHorizontal: 10, marginVertical: 15 }}>
-          <Text style={{ fontSize: 18, fontWeight: 600 }}>Complete Your Profile</Text>
-          <Text style={{ marginTop: 10, color: 'gray' }}>
-            What would you like your mates to call you? ❤️
-          </Text>
+        <View style={{ padding: 12 }} >
+          <Ionicons name="arrow-back" size={24} color="black" style={{}} />
+          <View style={{}}>
+            <Text style={{ fontSize: 18, fontWeight: 600 }}>Complete Your Profile</Text>
+            <Text style={{ marginVertical: 10, color: 'gray' }}>
+              What would you like your mates to call you? ❤️
+            </Text>
+          </View>
+
+          <View style={{
+            marginVertical: 25,
+            flexDirection: 'column',
+            gap: 20,
+          }}>
+            <View>
+              <Text style={{ color: "gray", marginVertical: 5 }}>First Name *</Text>
+              <TextInput onChangeText={setFirstName} style={{ borderWidth: 1, borderRadius: 5, borderColor: "gray" }} placeholder='Enter first Name....' />
+            </View>
+            <View>
+              <Text style={{ color: "gray", marginVertical: 5 }} >Last Name</Text>
+              <TextInput onChangeText={setLastName} style={{ borderWidth: 1, borderRadius: 5, borderColor: "gray" }} placeholder='Enter Last Name....' />
+            </View>
+          </View>
         </View>
-      </View>
 
-    </ScrollView>
+
+
+      </ScrollView>
+
+      <Pressable onPress={()=>navigation.navigate("PreFinal")} style={{backgroundColor:"green" , marginVertical:10 ,padding:10 , marginHorizontal:7 , alignItems:"center" }}>
+        <Text style={{color:"white" , fontSize:19 ,fontWeight:"bold"}}>Next</Text>
+      </Pressable>
+    </>
+
   )
 }
 

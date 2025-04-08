@@ -20,6 +20,8 @@ import RegisterScreen from '../screens/RegisterScreen';
 import PasswordScreen from '../screens/PasswordScreen';
 import ImageScreen from '../screens/ImageScreen';
 import NameScreen from '../screens/NameScreen';
+import SelectImage from '../screens/SelectImage';
+import PreFinalScreen from '../screens/PreFinalScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -88,8 +90,9 @@ const AuthStack = () => {
       <Stack.Screen name='Start' component={StartScreen} options={{ headerShown: false }} />
       <Stack.Screen name='Login' component={LoginScreen} />
       <Stack.Screen name='Password' component={PasswordScreen} options={{headerShown:false}} />
-      <Stack.Screen name='Image' component={ImageScreen} />
+      <Stack.Screen name='Image' component={SelectImage}  options={{headerShown:false}}/>
       <Stack.Screen name='NameScreen' component={NameScreen} options={{ headerShown: false }} />
+      <Stack.Screen name='PreFinal' component={PreFinalScreen} options={{ headerShown: false }} />
 
     </Stack.Navigator>
   )
