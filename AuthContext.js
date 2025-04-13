@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {createContext, useEffect, useState} from 'react';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
   const [token, setToken] = useState('');
@@ -33,7 +33,14 @@ const AuthProvider = ({children}) => {
   }, []);
   return (
     <AuthContext.Provider
-      value={{token, userId, setUserId, upcommingGames, setupcommingGames}}>
+      value={{
+        token,
+        setToken,
+        userId,
+        setUserId,
+        upcommingGames,
+        setupcommingGames,
+      }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import StackNavigator from './navigation/StackNavigator'
-// import {NavigationContainer} from 
+import StackNavigator from './navigation/StackNavigator';
+import AuthProvider from './AuthContext';
 
 const App = () => {
   return (
-    <StackNavigator/>
-  )
-}
+    <AuthProvider>
+      <StackNavigator />
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;

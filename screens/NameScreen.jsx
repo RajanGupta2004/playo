@@ -60,6 +60,7 @@ const NameScreen = () => {
                 First Name *
               </Text>
               <TextInput
+                value={firstName}
                 onChangeText={setFirstName}
                 style={{borderWidth: 1, borderRadius: 5, borderColor: 'gray'}}
                 placeholder="Enter first Name...."
@@ -68,6 +69,7 @@ const NameScreen = () => {
             <View>
               <Text style={{color: 'gray', marginVertical: 5}}>Last Name</Text>
               <TextInput
+                value={lastName}
                 onChangeText={setLastName}
                 style={{borderWidth: 1, borderRadius: 5, borderColor: 'gray'}}
                 placeholder="Enter Last Name...."

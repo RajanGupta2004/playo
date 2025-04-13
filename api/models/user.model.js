@@ -1,5 +1,4 @@
-
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
   {
@@ -20,15 +19,15 @@ const userSchema = new mongoose.Schema(
     },
     image: {
       type: String, // URL to the user's profile image
-      required: true,
+      // required: true,
     },
 
-    skill:{
-      type:String,
+    skill: {
+      type: String,
     },
 
     otp: {
-        type:String
+      type: String,
     },
 
     noOfGames: {
@@ -54,4 +53,4 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model('User', userSchema);
 
-export default User
+export default User;
