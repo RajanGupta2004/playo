@@ -1,21 +1,53 @@
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {
+  getRegistrationProgress,
+  saveRegistrationProgress,
+} from '../registrationUtils';
 
 const RegisterScreen = () => {
+  const [email, setEmail] = useState('');
 
-  const [email , setEmail] = useState('');
+  const navigation = useNavigation();
 
-  const navigation  = useNavigation();
+  const Next = () => {
+    if (email !== '') {
+      saveRegistrationProgress('Register', {email});
+    }
+    navigation.navigate('Password');
+  };
+
+  useEffect(() => {
+    getRegistrationProgress('Register').then(progressData => {
+      console.log('progressData', progressData);
+      if (progressData) {
+        setEmail(progressData.email);
+      }
+    });
+  }, []);
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>You're almost there</Text>
 
       <View>
         <Text style={styles.label}>Enter Email</Text>
-        <TextInput style={styles.input} onChange={setEmail} placeholder="Enter your email..." />
+        <TextInput
+          value={email}
+          style={styles.input}
+          onChangeText={setEmail}
+          placeholder="Enter your email..."
+        />
 
-        <Pressable style={styles.button} onPress={()=>navigation.navigate("Password")}>
+        <Pressable style={styles.button} onPress={Next}>
           <Text style={styles.buttonText}>Next</Text>
         </Pressable>
 
