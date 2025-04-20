@@ -3,6 +3,8 @@ import User from '../models/user.model.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+import Venue from '../models/venue.model.js';
+
 export const RegisterUser = async (req, res) => {
   try {
     const {email, password, firstName} = req.body;

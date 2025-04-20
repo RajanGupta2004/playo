@@ -22,6 +22,7 @@ import PreFinalScreen from '../screens/PreFinalScreen';
 import OtpScreen from '../screens/OtpScreen';
 import {AuthContext} from '../AuthContext';
 import CreateActivity from '../screens/CreateActivity';
+import TagVenuScreen from '../screens/TagVenuScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -177,6 +178,12 @@ const StackNavigator = () => {
         <Stack.Screen
           name="Create"
           component={CreateActivity}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="TagVenue"
+          component={TagVenuScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
