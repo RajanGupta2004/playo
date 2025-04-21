@@ -40,87 +40,97 @@ const TagVenuScreen = () => {
     }
   }, [tagVenue, navigation]);
 
-  console.log('venues', venues);
+  console.log('venues', navigation);
+
+  const handleSelectVenue = venue => {
+    navigation.navigate('Create', {taggedVenue: venue});
+  };
   return (
-    <SafeAreaView>
-      <View style={{}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            backgroundColor: '#294461',
-            gap: 10,
-            padding: 10,
-          }}>
-          <Ionicons name="arrow-back" size={24} color="white" />
+    <>
+      <SafeAreaView>
+        <View style={{}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              backgroundColor: '#294461',
+              gap: 10,
+              padding: 10,
+            }}>
+            <Ionicons name="arrow-back" size={24} color="white" />
 
-          <Text style={{fontSize: 17, fontWeight: 'bold', color: 'white'}}>
-            Tag Venue
-          </Text>
-        </View>
+            <Text style={{fontSize: 17, fontWeight: 'bold', color: 'white'}}>
+              Tag Venue
+            </Text>
+          </View>
 
-        <FlatList
-          data={venues}
-          keyExtractor={item => item._id}
-          renderItem={({item}) => {
-            return (
-              <Pressable
-                onPress={() => setTagVenue(item)}
-                style={{
-                  padding: 10,
-                  marginVertical: 10,
-                  borderColor: '#e0e0e0',
-                  borderWidth: 1,
-                  marginHorizontal: 10,
-                }}>
-                <View
-                  style={{flexDirection: 'row', gap: 10, alignItems: 'center'}}>
-                  <Image
+          <FlatList
+            data={venues}
+            keyExtractor={item => item._id}
+            renderItem={({item}) => {
+              return (
+                <Pressable
+                  onPress={() => handleSelectVenue(item?.name)}
+                  style={{
+                    padding: 10,
+                    marginVertical: 10,
+                    borderColor: '#e0e0e0',
+                    borderWidth: 1,
+                    marginHorizontal: 10,
+                  }}>
+                  <View
                     style={{
-                      width: 90,
-                      height: 90,
-                      resizeMode: 'cover',
-                      borderRadius: 4,
-                    }}
-                    source={{uri: item?.image}}
-                  />
-
-                  <View style={{flex: 1}}>
-                    <Text
-                      numberOfLines={1}
-                      ellipsizeMode="tail"
+                      flexDirection: 'row',
+                      gap: 10,
+                      alignItems: 'center',
+                    }}>
+                    <Image
                       style={{
-                        fontSize: 15,
-                        fontWeight: '500',
-                      }}>
-                      {item?.name}
-                    </Text>
-                    <Text numberOfLines={2} ellipsizeMode="tail">
-                      {item?.address}
-                    </Text>
-                    <Text style={{marginTop: 8, fontWeight: '500'}}>
-                      4.4 (122 ratings)
+                        width: 90,
+                        height: 90,
+                        resizeMode: 'cover',
+                        borderRadius: 4,
+                      }}
+                      source={{uri: item?.image}}
+                    />
+
+                    <View style={{flex: 1}}>
+                      <Text
+                        numberOfLines={1}
+                        ellipsizeMode="tail"
+                        style={{
+                          fontSize: 15,
+                          fontWeight: '500',
+                        }}>
+                        {item?.name}
+                      </Text>
+                      <Text numberOfLines={2} ellipsizeMode="tail">
+                        {item?.address}
+                      </Text>
+                      <Text style={{marginTop: 8, fontWeight: '500'}}>
+                        4.4 (122 ratings)
+                      </Text>
+                    </View>
+
+                    <Ionicons
+                      name="shield-checkmark-sharp"
+                      size={24}
+                      color="green"
+                      style={{marginLeft: 5}}
+                    />
+                  </View>
+                  <View>
+                    <Text style={{textAlign: 'center', color: 'gray'}}>
+                      BOOKABLE
                     </Text>
                   </View>
-
-                  <Ionicons
-                    name="shield-checkmark-sharp"
-                    size={24}
-                    color="green"
-                    style={{marginLeft: 5}}
-                  />
-                </View>
-                <View>
-                  <Text style={{textAlign: 'center', color: 'gray'}}>
-                    BOOKABLE
-                  </Text>
-                </View>
-              </Pressable>
-            );
-          }}
-        />
-      </View>
-    </SafeAreaView>
+                </Pressable>
+              );
+            }}
+          />
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 
