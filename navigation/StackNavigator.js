@@ -23,6 +23,7 @@ import OtpScreen from '../screens/OtpScreen';
 import {AuthContext} from '../AuthContext';
 import CreateActivity from '../screens/CreateActivity';
 import TagVenuScreen from '../screens/TagVenuScreen';
+import SelectTimeScreen from '../screens/SelectTimeScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -186,13 +187,18 @@ const StackNavigator = () => {
           component={TagVenuScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="Time"
+          component={SelectTimeScreen}
+          // options={{headerShown: false}}
+        />
       </Stack.Navigator>
     );
   };
   return (
     <NavigationContainer>
-      {token == null || token === '' ? <AuthStack /> : <MainStack />}
-      {/* <AuthStack /> */}
+      {/* {token == null || token === '' ? <AuthStack /> : <MainStack />} */}
+      <MainStack />
     </NavigationContainer>
   );
 };

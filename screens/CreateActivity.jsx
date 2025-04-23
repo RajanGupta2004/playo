@@ -69,6 +69,12 @@ const CreateActivity = () => {
   console.log('prepared Date ', dates);
 
   useEffect(() => {
+    if (route.params?.timeInterval) {
+      setTimeInterval(route?.params?.timeInterval);
+    }
+  }, [route.params]);
+
+  useEffect(() => {
     if (route.params?.taggedVenue) {
       setTagVenue(route?.params?.taggedVenue);
     }
@@ -163,6 +169,7 @@ const CreateActivity = () => {
             />
 
             <Pressable
+              onPress={() => navigation.navigate('Time')}
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
